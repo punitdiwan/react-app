@@ -1,25 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
+import Logo from './Logo';
+import Title from './Title';
+import Counter from './Counter'
+import LinkTitle from './LinkTitle';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
+class  App extends React.Component {
 
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  render(){
+    let user = {firstName:'John', surName:'Doe'};
+    return (
+      <div className="App">
+        <header className="App-header">
+            <Logo/>          
+          <Title msg="This is my React Props"/>
+          <Counter startAt={5}/>
+          <LinkTitle msg={user}/>
+          
+        </header>
+      </div>
+    );
+  }
+
 }
 
 export default App;
